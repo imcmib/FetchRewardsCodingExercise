@@ -1,4 +1,4 @@
-package com.aivanchenko.fetch.app.ui.theme
+package com.aivanchenko.fetch.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

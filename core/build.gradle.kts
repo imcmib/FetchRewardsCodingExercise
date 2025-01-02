@@ -2,11 +2,13 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.aivanchenko.fetch.data"
-    compileSdk = 35
+    namespace = "com.aivanchenko.fetch.core"
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -34,11 +36,16 @@ android {
 }
 
 dependencies {
+    implementation(project(":data"))
     implementation(project(":domain"))
 
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit)
+    implementation(libs.retrofit.kotlinx.serialization.converter)
+    implementation(libs.okhttp)
+
     implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)
 }

@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Fetch Rewards Coding Exercise"
 include(":app")
- 
+include(":domain")
+include(":data")
